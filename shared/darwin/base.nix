@@ -1,4 +1,10 @@
-{ pkgs, lib, config, self, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  self,
+  ...
+}:
 {
   nix.settings.experimental-features = "nix-command flakes";
   system.stateVersion = 6;
