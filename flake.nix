@@ -30,6 +30,10 @@
         ./users/kreemer.nix
       ];
 
+      linuxOnlyModules = [
+        ./shared/linux/base.nix
+      ];
+
       homeCommonModules = [
         ./home/base.nix
         ./home/ghostty.nix
@@ -37,6 +41,7 @@
         ./home/helix.nix
         ./home/ssh-agent.nix
         ./home/zsh.nix
+        ./home/firefox.nix
       ];
 
     in
@@ -60,12 +65,23 @@
           ];
       };
 
-      # nixosConfigurations.linux-desktop = nixpkgs.lib.nixosSystem {
-      #   system = "x86_64-linux";
-      #   modules = commonModules ++ [
-      #     ./shared/linux-modules/base.nix
-      #     ./hosts/linux-desktop.nix.nix
-      #   ];
-      # };
+      nixosConfigurations.ideapad = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules =
+          commonModules
+          ++ linuxOnlyModules
+          ++ [
+            ./hosts/ideapad.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.kreemer.imports = homeCommonModules ++ [
+                ./hosts/ideapad.hm.nix
+              ];
+            }
+          ];
+      };
     };
 }

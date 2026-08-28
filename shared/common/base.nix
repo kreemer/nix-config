@@ -13,5 +13,6 @@
     github-copilot-cli
     obsidian
     devcontainer
+    firefox
   ];
 }

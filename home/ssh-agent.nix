@@ -1,21 +1,9 @@
 { pkgs, ... }:
 {
-  home.sessionVariables = {
-    SSH_AUTH_SOCK = "$HOME/.ssh/proton-pass-agent.sock";
-  };
-
-  launchd.agents.proton-pass-ssh-agent = {
+  services.proton-pass-agent = {
     enable = true;
-    config = {
-      ProgramArguments = [
-        "/run/current-system/sw/bin/pass-cli"
-        "ssh-agent"
-        "start"
-      ];
-      RunAtLoad = true;
-      KeepAlive = true;
-      StandardOutPath = "/tmp/proton-pass-ssh-agent.log";
-      StandardErrorPath = "/tmp/proton-pass-ssh-agent.log";
-    };
+    package = pkgs.proton-pass-cli;
+    # Optional extra args:
+    # extraArgs = [ "--refresh-interval" "7200" ];
   };
 }
