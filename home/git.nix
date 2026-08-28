@@ -1,9 +1,14 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   programs.git = {
     enable = true;
     package = pkgs.git;
-    
+
     lfs.enable = true;
 
     ignores = [
@@ -14,12 +19,14 @@
 
     signing = {
       signByDefault = true;
-      key = "YOUR_GPG_KEY_ID";
+      key = "key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMHPGgHjY51GMbnnw9YNYZP73/X/FsF3MZn6EtNLMlLa";
     };
 
     settings = {
       user.name = "kreemer";
       user.email = "kevin@familie-studer.ch";
+
+      gpg.format = "ssh";
 
       alias = {
         co = "checkout";

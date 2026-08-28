@@ -35,6 +35,7 @@
         ./home/ghostty.nix
         ./home/git.nix
         ./home/helix.nix
+        ./home/ssh-agent.nix
         ./home/zsh.nix
       ];
 
