@@ -12,5 +12,6 @@
     gnupg
     github-copilot-cli
     obsidian
+    devcontainer
   ];
 }
