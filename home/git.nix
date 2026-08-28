@@ -41,6 +41,13 @@
     };
   };
 
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper = {
+      enable = true;
+    };
+  };
+
   home.file.".config/git/allowed_signers".text = ''
     kevin@familie-studer.ch ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMHPGgHjY51GMbnnw9YNYZP73/X/FsF3MZn6EtNLMlLa
   '';
