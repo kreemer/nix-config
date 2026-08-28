@@ -3,6 +3,9 @@
   homebrew = {
     enable = true;
     onActivation.cleanup = "uninstall";
-    casks = [ "spotify" ];
+    casks = [
+      "spotify"
+      "balenaetcher"
+    ];
   };
 }
