@@ -10,4 +10,9 @@
   system.stateVersion = 6;
   system.configurationRevision = self.rev or self.dirtyRev or null;
   nixpkgs.hostPlatform = "aarch64-darwin";
+
+  environment.systemPackages = with pkgs; [
+    colima
+    docker
+  ];
 }
