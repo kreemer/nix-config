@@ -9,6 +9,7 @@
     yq
     azure-cli
     github-cli
+    gnupg
     github-copilot-cli
     obsidian
   ];

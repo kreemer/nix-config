@@ -27,6 +27,7 @@
       user.email = "kevin@familie-studer.ch";
 
       gpg.format = "ssh";
+      gpg.ssh.allowedSignersFile = "~/.config/git/allowed_signers";
 
       alias = {
         co = "checkout";
@@ -39,4 +40,8 @@
       pull.rebase = true;
     };
   };
+
+  home.file.".config/git/allowed_signers".text = ''
+    kevin@familie-studer.ch ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMHPGgHjY51GMbnnw9YNYZP73/X/FsF3MZn6EtNLMlLa
+  '';
 }
