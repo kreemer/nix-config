@@ -14,17 +14,9 @@
       DontCheckDefaultBrowser = true;
       DisablePocket = true;
       SearchBar = "unified";
-    };
-    profiles = {
-      default = {
-        id = 0;
-        name = "default";
-        isDefault = true;
-        settings = {
-          "browser.startup.homepage" = "https://heise.de";
-        };
+      AIControls = {
+        Default = "blocked";
       };
     };
-
   };
 }
