@@ -15,5 +15,10 @@
     teams-for-linux
     docker
     thunderbird
+    rclone
+    fuse3
   ];
+
+  # Ensure FUSE is enabled
+  programs.fuse.userAllowOther = true;
 }

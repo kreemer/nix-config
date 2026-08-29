@@ -42,6 +42,7 @@
         ./home/ssh-agent.nix
         ./home/zsh.nix
         ./home/firefox.nix
+        ./home/protondrive.nix
       ];
 
     in
