@@ -27,11 +27,12 @@
       darwinOnlyModules = [
         ./shared/darwin/base.nix
         ./shared/darwin/homebrew.nix
-        ./users/kreemer.nix
+        ./users/kreemer-darwin.nix
       ];
 
       linuxOnlyModules = [
         ./shared/linux/base.nix
+        ./users/kreemer-linux.nix
       ];
 
       homeCommonModules = [
