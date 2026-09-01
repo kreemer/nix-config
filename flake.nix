@@ -46,6 +46,10 @@
         # ./home/protondrive.nix
       ];
 
+      darwinHomeModules = [
+        ./home/darwin-settings.nix
+      ];
+
     in
     {
       darwinConfigurations."id-kstuder-MBP-M5-24" = nix-darwin.lib.darwinSystem {
@@ -60,7 +64,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users.kreemer.imports = homeCommonModules ++ [
+              home-manager.users.kreemer.imports = homeCommonModules ++ darwinHomeModules ++ [
                 ./hosts/id-kstuder-MBP-M5-24.hm.nix
               ];
             }
