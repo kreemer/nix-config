@@ -18,38 +18,21 @@
       home-manager,
     }:
     let
-      commonModules = [
-        ./shared/common/base.nix
-        ./shared/common/proton.nix
-        ./shared/common/shell.nix
-      ];
+      commonModules = [ ./system/common ];
 
       darwinOnlyModules = [
-        ./shared/darwin/base.nix
-        ./shared/darwin/homebrew.nix
+        ./system/darwin
         ./users/kreemer-darwin.nix
       ];
 
       linuxOnlyModules = [
-        ./shared/linux/base.nix
+        ./system/linux
         ./users/kreemer-linux.nix
       ];
 
-      homeCommonModules = [
-        ./home/base.nix
-        ./home/ghostty.nix
-        ./home/git.nix
-        ./home/helix.nix
-        ./home/ssh-agent.nix
-        ./home/zsh.nix
-        ./home/firefox.nix
-        # ./home/protondrive.nix
-      ];
+      homeCommonModules = [ ./home/common ];
 
-      darwinHomeModules = [
-        ./home/darwin-settings.nix
-        ./home/sudo-wrapper.nix
-      ];
+      darwinHomeModules = [ ./home/darwin ];
 
     in
     {
