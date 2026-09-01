@@ -16,5 +16,7 @@
     firefox
     devenv
     spotify
+    qemu
+    virt-manager
   ];
 }
