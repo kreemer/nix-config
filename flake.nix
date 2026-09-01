@@ -48,6 +48,7 @@
 
       darwinHomeModules = [
         ./home/darwin-settings.nix
+        ./home/sudo-wrapper.nix
       ];
 
     in
