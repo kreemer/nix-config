@@ -16,4 +16,6 @@
     "@wheel"
   ];
 
+  nix.linux-builder.enable = true;
+
 }
