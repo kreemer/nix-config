@@ -14,5 +14,7 @@
     obsidian
     devcontainer
     firefox
+    devenv
+    spotify
   ];
 }

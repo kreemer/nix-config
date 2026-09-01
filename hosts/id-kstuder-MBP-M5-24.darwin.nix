@@ -9,4 +9,11 @@
   # Oder host-spezifische Pakete:
   # environment.systemPackages = lib.optionals (config.networking.hostName == "id-kstuder-MBP-M5-24")
   #   [ pkgs.specificMacOnlyTool ];
+
+  nix.settings.trusted-users = [
+    "root"
+    "kreemer"
+    "@wheel"
+  ];
+
 }
