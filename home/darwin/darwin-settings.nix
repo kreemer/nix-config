@@ -25,7 +25,7 @@
   home.packages = [ pkgs.defaultbrowser ];
 
   home.activation.setDefaultBrowser = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    $DRY_RUN_CMD ${pkgs.defaultbrowser}/bin/defaultbrowser firefox
+    $DRY_RUN_CMD ${pkgs.defaultbrowser}/bin/defaultbrowser safari
   '';
 
   # Wallpaper — uncomment and set the image path once the file is in place
