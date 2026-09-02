@@ -26,6 +26,9 @@
 
     plugins = [ ];
 
-    initContent = "source ${./files/functions.zsh}";
+    initContent = ''
+      source ${./files/functions.zsh}
+      eval "$(devenv hook zsh)"
+    '';
   };
 }
