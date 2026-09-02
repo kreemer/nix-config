@@ -9,6 +9,7 @@
     ];
     casks = [
       "balenaetcher"
+      "windows-app"
     ];
   };
 }
