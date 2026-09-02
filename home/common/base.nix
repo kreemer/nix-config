@@ -10,6 +10,7 @@
   home.sessionVariables = {
     EDITOR = "hx";
     TERMINAL = "ghostty";
+    NIX_SYSTEM_FLAKE_DIR = "$HOME/.config/nix-config";
   };
 
   home.stateVersion = "26.05";
