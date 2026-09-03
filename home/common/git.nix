@@ -15,6 +15,10 @@
       ".DS_Store"
       "*.swp"
       ".env"
+      ".devenv"
+      "devenv.lock"
+      "devenv.nix"
+      "devenv.yaml"
     ];
 
     signing = {
