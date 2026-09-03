@@ -1,4 +1,17 @@
 { pkgs, lib, ... }:
+let
+  darwinSwitchSummary = pkgs.writeShellApplication {
+    name = "darwin-switch-summary";
+    runtimeInputs = with pkgs; [
+      nix
+      jq
+      coreutils
+      gnugrep
+      gnused
+    ];
+    text = builtins.readFile ../../scripts/darwin-switch-summary.sh;
+  };
+in
 {
   programs = {
     direnv.enable = true;
@@ -14,5 +27,6 @@
   };
 
   home.stateVersion = "26.05";
+  home.packages = [ darwinSwitchSummary ];
   home.sessionPath = [ "$HOME/.local/bin" ];
 }

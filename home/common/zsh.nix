@@ -15,7 +15,7 @@
       gs = "git status";
       gc = "git commit";
       gp = "git push";
-      u = "cd $NIX_SYSTEM_FLAKE_DIR; sudo darwin-rebuild switch --flake .#id-kstuder-MBP-M5-24";
+      u = "darwin-switch-summary";
     };
 
     oh-my-zsh = {
