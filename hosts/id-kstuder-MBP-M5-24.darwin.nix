@@ -18,4 +18,9 @@
 
   nix.linux-builder.enable = true;
 
+  local.ensureAdmin = {
+    enable = true;
+    users = [ "kreemer" ];
+  };
+
 }
