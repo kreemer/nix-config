@@ -10,6 +10,7 @@
     casks = [
       "balenaetcher"
       "windows-app"
+      "proton-drive"
     ];
   };
 }
