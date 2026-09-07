@@ -4,9 +4,9 @@
     enable = true;
     settings = {
       theme = "monokai_pro_machine";
-      mouse = false;
-      true-color = true;
       editor = {
+        mouse = false;
+        true-color = true;
         soft-wrap = {
           enable = true;
         };
@@ -39,15 +39,12 @@
     };
 
     languages = {
-      language-server.rust-analyzer = {
+      language-server."rust-analyzer" = {
         command = "rust-analyzer";
         config = {
-          rustc = {
-            source = "discover";
-          };
+          rustc.source = "discover";
         };
       };
-
       language = [
         {
           name = "nix";
