@@ -11,6 +11,7 @@
       "balenaetcher"
       "windows-app"
       "proton-drive"
+      "dbeaver-community"
     ];
   };
 }
