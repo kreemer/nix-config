@@ -42,6 +42,7 @@
 
       init.defaultBranch = "main";
       pull.rebase = true;
+      push.autoSetupRemote = true;
 
       core.editor = "hx";
     };
