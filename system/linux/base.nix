@@ -24,6 +24,7 @@
     thunderbird
     rclone
     fuse3
+    fastfetch
   ];
 
   # Ensure FUSE is enabled
