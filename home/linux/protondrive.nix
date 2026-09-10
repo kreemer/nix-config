@@ -17,6 +17,7 @@
       Environment = [
         "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus"
         "XDG_RUNTIME_DIR=/run/user/%U"
+        "PROTON_PASS_LINUX_KEYRING=dbus"
       ];
 
       ExecStart = pkgs.writeShellScript "start-rclone-proton" ''

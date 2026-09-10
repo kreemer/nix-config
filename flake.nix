@@ -34,6 +34,8 @@
 
       darwinHomeModules = [ ./home/darwin ];
 
+      linuxHomeModules = [ ./home/linux ];
+
     in
     {
       darwinConfigurations."id-kstuder-MBP-M5-24" = nix-darwin.lib.darwinSystem {
@@ -67,7 +69,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users.kreemer.imports = homeCommonModules ++ [
+              home-manager.users.kreemer.imports = homeCommonModules ++ linuxHomeModules ++ [
                 ./hosts/ideapad.hm.nix
               ];
             }
