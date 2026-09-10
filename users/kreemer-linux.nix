@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  system.primaryUser = "kreemer";
+  # system.primaryUser = "kreemer";
 
   users.users.kreemer = {
     name = "kreemer";
