@@ -29,4 +29,9 @@
 
   # Ensure FUSE is enabled
   programs.fuse.userAllowOther = true;
+
+  # Enable symlink for bash binary for copilot
+  systemd.tmpfiles.rules = [
+    "L+ /bin/bash - - - - /run/current-system/sw/bin/bash"
+  ];
 }
