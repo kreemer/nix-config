@@ -9,6 +9,12 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     # Patched libfprint fork with support for the Goodix GF3268 (27c6:55b4)
     # fingerprint reader found in the Lenovo IdeaPad C340. Not a flake; consumed
     # as a source tree by the fingerprint overlay in system/linux/fingerprint.nix.
@@ -25,6 +31,7 @@
       nix-darwin,
       nixpkgs,
       home-manager,
+      impermanence,
       libfprint-goodix55b4,
     }:
     let
@@ -74,6 +81,7 @@
           commonModules
           ++ linuxOnlyModules
           ++ [
+            impermanence.nixosModules.impermanence
             ./hosts/ideapad
             home-manager.nixosModules.home-manager
             {
