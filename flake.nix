@@ -8,6 +8,15 @@
 
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Patched libfprint fork with support for the Goodix GF3268 (27c6:55b4)
+    # fingerprint reader found in the Lenovo IdeaPad C340. Not a flake; consumed
+    # as a source tree by the fingerprint overlay in system/linux/fingerprint.nix.
+    # Experimental, reverse-engineered driver — see that module for caveats.
+    libfprint-goodix55b4 = {
+      url = "github:jedbillyb/libfprint/goodix-55b4-fixes";
+      flake = false;
+    };
   };
 
   outputs =
@@ -16,6 +25,7 @@
       nix-darwin,
       nixpkgs,
       home-manager,
+      libfprint-goodix55b4,
     }:
     let
       commonModules = [ ./system/common ];
@@ -59,6 +69,7 @@
 
       nixosConfigurations.ideapad = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit self libfprint-goodix55b4; };
         modules =
           commonModules
           ++ linuxOnlyModules
