@@ -17,8 +17,11 @@
   # Load Intel Driver on boot
   boot.initrd.kernelModules = [ "i915" ];
 
-  powerManagement.tlp.settings = {
-    USB_AUTOSUSPEND = 0;
+  services.tlp = {
+    enable = true;
+    settings = {
+      USB_AUTOSUSPEND = 0;
+    };
   };
 
   networking.hostName = "nixos"; # Define your hostname.

@@ -21,6 +21,23 @@
         "type": "github"
       }
     },
+    "libfprint-goodix55b4": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1784959666,
+        "narHash": "sha256-9qNQNDYur42if1pPoNyUZ1jd5eAuz/19n5eshem9UV4=",
+        "owner": "jedbillyb",
+        "repo": "libfprint",
+        "rev": "f7b06e4c737ba82d5d002678d017c400b982e4f3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jedbillyb",
+        "ref": "goodix-55b4-fixes",
+        "repo": "libfprint",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -61,6 +78,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "libfprint-goodix55b4": "libfprint-goodix55b4",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs"
       }
