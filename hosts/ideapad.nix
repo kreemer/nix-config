@@ -17,6 +17,7 @@
   # Load Intel Driver on boot
   boot.initrd.kernelModules = [ "i915" ];
 
+  services.power-profiles-daemon.enable = false;
   services.tlp = {
     enable = true;
     settings = {
