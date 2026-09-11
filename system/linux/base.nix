@@ -25,6 +25,7 @@
     rclone
     fuse3
     fastfetch
+    wl-clipboard
   ];
 
   # Ensure FUSE is enabled
