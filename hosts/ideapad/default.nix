@@ -55,14 +55,6 @@
     LC_TIME = "de_CH.UTF-8";
   };
 
-  # Apply X11 keyboard settings to the virtual console/TTY too
-  console.useXkbConfig = true;
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "intl";
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."kreemer" = {
     isNormalUser = true;

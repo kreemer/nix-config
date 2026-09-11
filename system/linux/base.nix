@@ -18,6 +18,17 @@
   security.pam.services.cosmic-greeter.enableGnomeKeyring = true;
   security.pam.services.login.enableGnomeKeyring = true;
 
+  # COSMIC needs the XKB rules file in the FHS path to discover layouts on NixOS.
+  console.useXkbConfig = true;
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "intl";
+  };
+  environment.sessionVariables = {
+    XKB_DEFAULT_LAYOUT = "us";
+    XKB_DEFAULT_VARIANT = "intl";
+  };
+
   environment.systemPackages = with pkgs; [
     teams-for-linux
     docker
@@ -34,5 +45,6 @@
   # Enable symlink for bash binary for copilot
   systemd.tmpfiles.rules = [
     "L+ /bin/bash - - - - /run/current-system/sw/bin/bash"
+    "L+ /usr/share/X11/xkb/rules/base.xml - - - - ${pkgs.xkeyboard_config}/share/X11/xkb/rules/base.xml"
   ];
 }

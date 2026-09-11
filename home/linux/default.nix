@@ -5,4 +5,15 @@
         (builtins.attrNames (builtins.readDir ./.))
       )
     );
+
+  home.file.".config/cosmic/com.system76.CosmicComp/v1/xkb_config".text = ''
+    (
+      rules: "",
+      model: "",
+      layout: "us",
+      variant: "intl",
+      options: None,
+    )
+  '';
+  home.file.".config/cosmic/com.system76.CosmicComp/v1/xkb_config".force = true;
 }
