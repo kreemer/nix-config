@@ -53,6 +53,7 @@
     wl-clipboard
     openfortivpn
     openfortivpn-webview
+    freerdp
   ];
 
   # Ensure FUSE is enabled
