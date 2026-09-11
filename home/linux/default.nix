@@ -17,7 +17,16 @@
   '';
   home.file.".config/cosmic/com.system76.CosmicComp/v1/xkb_config".force = true;
 
-  home.packages = [ pkgs.fcitx5 ];
+  home.packages = [
+    pkgs.fcitx5
+    pkgs.fcitx5-gtk
+  ];
+
+  home.sessionVariables = {
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+  };
 
   systemd.user.services.fcitx5-daemon = {
     Unit = {

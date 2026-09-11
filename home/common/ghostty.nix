@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
   programs.ghostty = {
     enable = true;
     package = if pkgs.stdenv.hostPlatform.isDarwin then pkgs.ghostty-bin else pkgs.ghostty;
@@ -13,11 +13,6 @@
       quick-terminal-position = "bottom";
       macos-titlebar-style = "tabs";
       macos-window-buttons = "hidden";
-    } // lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
-      env = [
-        "GTK_IM_MODULE=fcitx"
-        "XMODIFIERS=@im=fcitx"
-      ];
     };
   };
 }
