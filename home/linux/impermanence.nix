@@ -1,7 +1,6 @@
-{ config, ... }:
+{ ... }:
 {
-  home.persistence."/persist/home/${config.home.username}" = {
-    allowOther = true;
+  home.persistence."/persist" = {
     directories = [
       "Code"
       "Documents"
