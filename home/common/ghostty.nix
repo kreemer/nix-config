@@ -15,8 +15,8 @@
       macos-window-buttons = "hidden";
     } // lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
       env = [
-        "GTK_IM_MODULE=ibus"
-        "XMODIFIERS=@im=ibus"
+        "GTK_IM_MODULE=fcitx"
+        "XMODIFIERS=@im=fcitx"
       ];
     };
   };

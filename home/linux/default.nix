@@ -17,16 +17,17 @@
   '';
   home.file.".config/cosmic/com.system76.CosmicComp/v1/xkb_config".force = true;
 
-  home.packages = [ pkgs.ibus ];
+  home.packages = [ pkgs.fcitx5 ];
 
-  systemd.user.services.ibus-daemon = {
+  systemd.user.services.fcitx5-daemon = {
     Unit = {
-      Description = "IBus Daemon";
+      Description = "Fcitx5 Daemon";
       After = [ "graphical-session.target" ];
     };
 
     Service = {
-      ExecStart = "${pkgs.ibus}/bin/ibus-daemon --xim -drx";
+      Type = "forking";
+      ExecStart = "${pkgs.fcitx5}/bin/fcitx5 -d --replace";
       Restart = "on-failure";
     };
 
