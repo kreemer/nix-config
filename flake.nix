@@ -54,14 +54,14 @@
           commonModules
           ++ darwinOnlyModules
           ++ [
-            ./hosts/id-kstuder-MBP-M5-24.darwin.nix
+            ./hosts/id-kstuder-MBP-M5-24
             home-manager.darwinModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
               home-manager.users.kreemer.imports = homeCommonModules ++ darwinHomeModules ++ [
-                ./hosts/id-kstuder-MBP-M5-24.hm.nix
+                ./hosts/id-kstuder-MBP-M5-24/home.nix
               ];
             }
           ];
@@ -74,14 +74,14 @@
           commonModules
           ++ linuxOnlyModules
           ++ [
-            ./hosts/ideapad.nix
+            ./hosts/ideapad
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
               home-manager.users.kreemer.imports = homeCommonModules ++ linuxHomeModules ++ [
-                ./hosts/ideapad.hm.nix
+                ./hosts/ideapad/home.nix
               ];
             }
           ];

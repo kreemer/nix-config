@@ -1,5 +1,8 @@
 { config, lib, ... }:
 {
+  # Host-specific modules (auto-imported).
+  imports = [ ./modules ];
+
   # Nur host-spezifische Überschreibungen hier
   networking.hostName = "id-kstuder-MBP-M5-24";
 

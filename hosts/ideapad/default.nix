@@ -7,7 +7,9 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ./ideapad-hardware.nix
+    ./hardware.nix
+    # Host-specific modules (auto-imported).
+    ./modules
   ];
 
   # Bootloader.
