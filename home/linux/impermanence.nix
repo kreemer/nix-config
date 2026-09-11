@@ -3,6 +3,7 @@
   home.persistence."/persist/home/${config.home.username}" = {
     allowOther = true;
     directories = [
+      "Code"
       "Documents"
       "Downloads"
       "Pictures"
