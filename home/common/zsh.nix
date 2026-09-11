@@ -15,8 +15,20 @@
       gs = "git status";
       gc = "git commit";
       gp = "git push";
-      u = "darwin-switch-summary";
-    };
+    }
+    // (
+      if pkgs.stdenv.isLinux then
+        {
+          # Linux specific aliases
+          pbcopy = "wl-copy";
+          pbpaste = "wl-paste";
+        }
+      else
+        {
+          # Other specific aliases
+          u = "darwin-switch-summary";
+        }
+    );
 
     oh-my-zsh = {
       enable = true;
