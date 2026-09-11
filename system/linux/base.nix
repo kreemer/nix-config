@@ -7,7 +7,10 @@
 }:
 {
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.gc = {
     automatic = true;
     dates = "daily";
@@ -46,6 +49,8 @@
     fuse3
     fastfetch
     wl-clipboard
+    openfortivpn
+    openfortivpn-webview
   ];
 
   # Ensure FUSE is enabled
