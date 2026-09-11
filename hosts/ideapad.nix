@@ -14,6 +14,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Load Intel Driver on boot
+  boot.initrd.kernelModules = [ "i915" ];
+
+  powerManagement.tlp.settings = {
+    USB_AUTOSUSPEND = 0;
+  };
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
