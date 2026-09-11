@@ -2,11 +2,11 @@
   description = "kreemer multi-platform nix flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
-    nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager/release-26.05";
+    home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Patched libfprint fork with support for the Goodix GF3268 (27c6:55b4)
