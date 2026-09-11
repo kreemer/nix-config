@@ -11,6 +11,8 @@
     "nix-command"
     "flakes"
   ];
+
+  networking.enableIPv6 = false;
   nix.gc = {
     automatic = true;
     dates = "daily";

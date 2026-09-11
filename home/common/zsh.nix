@@ -17,11 +17,12 @@
       gp = "git push";
     }
     // (
-      if pkgs.stdenv.isLinux then
+      if pkgs.stdenv.hostPlatform.isLinux then
         {
           # Linux specific aliases
           pbcopy = "wl-copy";
           pbpaste = "wl-paste";
+          vpn = "sudo openfortivpn --saml-login univpn.unibe.ch";
         }
       else
         {
